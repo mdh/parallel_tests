@@ -8,9 +8,11 @@ require 'pathname'
 module ParallelTests
   class CLI
     def run(argv)
+      puts "Got args: #{argv.inspect}"
       Signal.trap("INT") { handle_interrupt }
 
       options = parse_options!(argv)
+      puts "Got options: #{options.inspect}"
 
       ENV['DISABLE_SPRING'] ||= '1'
 

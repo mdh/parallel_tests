@@ -231,6 +231,7 @@ module ParallelTests
         end
 
         def sort_by_filesize(tests)
+          puts "Got tests: #{tests.inspect}"
           tests.sort!
           tests.map! { |test| [test, File.stat(test).size] }
         end
